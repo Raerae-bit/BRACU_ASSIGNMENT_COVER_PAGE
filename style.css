@@ -1,0 +1,303 @@
+
+/* ===== 1. Global styles ===== */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #263b89;
+    --navy-dark: #19285f;
+    --blue-light: #eef2ff;
+    --border: #dce1eb;
+    --text: #202638;
+    --muted: #687086;
+    --white: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6fb;
+    color: var(--text);
+}
+
+/* ===== 2. Top navigation ===== */
+.topbar {
+    background: var(--white);
+    padding: 22px 5%;
+    border-bottom: 3px solid var(--navy);
+    box-shadow: 0 2px 10px rgba(20, 35, 80, 0.06);
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 25px;
+    color: var(--navy);
+}
+
+.topbar p {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ===== 3. Main workspace ===== */
+.workspace {
+    max-width: 1500px;
+    margin: 30px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+    gap: 30px;
+    align-items: start;
+}
+
+.editor,
+.preview-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 5px 20px rgba(30, 45, 90, 0.05);
+}
+
+.editor h2,
+.preview-heading h2 {
+    margin-top: 0;
+    color: var(--navy);
+}
+
+.subtitle {
+    margin-top: -8px;
+    margin-bottom: 22px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* ===== 4. Form fields ===== */
+#coverForm label {
+    display: block;
+    margin: 15px 0 7px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#coverForm input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #ccd2df;
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text);
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#coverForm input:focus {
+    outline: none;
+    border-color: var(--navy);
+    box-shadow: 0 0 0 3px rgba(38, 59, 137, 0.1);
+}
+
+#coverForm h3 {
+    margin-top: 26px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--border);
+    color: var(--navy);
+    font-size: 15px;
+}
+
+/* ===== 5. Download button ===== */
+#downloadBtn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+#downloadBtn:hover {
+    background: var(--navy-dark);
+    transform: translateY(-1px);
+}
+
+#downloadBtn:focus-visible {
+    outline: 3px solid #91a5ff;
+    outline-offset: 3px;
+}
+
+/* ===== 6. Preview heading ===== */
+.preview-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.preview-heading h2 {
+    margin-bottom: 0;
+}
+
+.preview-heading span {
+    background: var(--blue-light);
+    color: var(--navy);
+    padding: 7px 10px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* ===== 7. A4 cover page ===== */
+.cover {
+    width: 100%;
+    max-width: 595px;
+    aspect-ratio: 210 / 297;
+    margin: 0 auto;
+    padding: 8% 9%;
+    background: #fff;
+    border: 1px solid #e0e3eb;
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    color: #171717;
+    overflow-wrap: anywhere;
+}
+
+.university {
+    text-align: center;
+    border-bottom: 2px solid var(--navy);
+    padding-bottom: 5%;
+}
+
+.university-logo {
+    display: block;
+    width: 105px;
+    height: 105px;
+    object-fit: contain;
+    margin: 0 auto 8px;
+}
+
+.university h2 {
+    margin: 0;
+    color: var(--navy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(14px, 2.2vw, 21px);
+    letter-spacing: 1px;
+}
+
+.university p {
+    margin: 8px 0 0;
+    color: #555;
+    font-size: clamp(8px, 1.2vw, 11px);
+}
+
+/* ===== 8. Assignment title ===== */
+.cover-title {
+    text-align: center;
+    margin: auto 0;
+    padding: 8% 0;
+}
+
+.cover-title .eyebrow {
+    color: var(--navy);
+    font-size: clamp(8px, 1.2vw, 11px);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.cover-title h1 {
+    margin: 18px 0 24px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(18px, 3vw, 29px);
+    line-height: 1.35;
+    font-weight: 700;
+}
+
+.cover-title > p:not(.eyebrow) {
+    margin: 9px 0;
+    font-size: clamp(9px, 1.35vw, 12px);
+    line-height: 1.5;
+}
+
+/* ===== 9. Student and faculty details ===== */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8%;
+    border-top: 1px solid #d5d9e2;
+    padding-top: 7%;
+}
+
+.details-grid h3 {
+    color: var(--navy);
+    font-size: clamp(8px, 1.2vw, 11px);
+    letter-spacing: 0.5px;
+    margin: 0 0 13px;
+}
+
+.details-grid p {
+    margin: 7px 0;
+    font-size: clamp(8px, 1.25vw, 11px);
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.cover-footer {
+    margin-top: auto;
+    padding-top: 9%;
+    text-align: center;
+    font-size: clamp(8px, 1.2vw, 11px);
+}
+
+.cover-footer p {
+    margin: 5px 0;
+}
+
+.cover-footer div {
+    margin-top: 15px;
+    color: var(--navy);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ===== 10. Mobile layout ===== */
+@media (max-width: 850px) {
+    .workspace {
+        grid-template-columns: 1fr;
+        padding: 0 14px;
+        gap: 20px;
+    }
+
+    .editor,
+    .preview-section {
+        padding: 18px;
+    }
+
+    .cover {
+        padding: 8%;
+    }
+}
+
+@media (max-width: 400px) {
+    .details-grid {
+        gap: 5%;
+    }
+
+    
+.university-logo {
+    display: block;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin: 0 auto 8px;
+}
+    }
+
