@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRACU Assignment Cover Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div>
+            <h1>BRACU Cover Studio</h1>
+            <p>Professional academic cover pages</p>
+        </div>
+    </header>
+
+    <main class="workspace">
+
+        <!-- Assignment information form -->
+        <section class="editor">
+            <h2>Assignment Details</h2>
+            <p class="subtitle">Fill in your information below.</p>
+
+            <form id="coverForm">
+                <label for="department">Department</label>
+                <input id="department" placeholder="e.g. Department of English">
+
+                <label for="assignmentTitle">Assignment Title</label>
+                <input id="assignmentTitle"
+                       placeholder="Enter your assignment title">
+
+                <label for="courseCode">Course Code</label>
+                <input id="courseCode" placeholder="e.g. ENG201">
+
+                <label for="courseTitle">Course Title</label>
+                <input id="courseTitle" placeholder="e.g. English Composition II">
+
+                <h3>Submitted By</h3>
+
+                <label for="studentName">Student Name</label>
+                <input id="studentName" placeholder="Your full name">
+
+                <label for="studentId">Student ID</label>
+                <input id="studentId" placeholder="Your student ID">
+
+                <label for="section">Section</label>
+                <input id="section" placeholder="e.g. 12">
+
+                <h3>Submitted To</h3>
+
+                <label for="facultyName">Faculty Name</label>
+                <input id="facultyName" placeholder="Instructor's full name">
+
+                <label for="designation">Designation</label>
+                <input id="designation" placeholder="e.g. Lecturer">
+
+                <label for="submissionDate">Submission Date</label>
+                <input id="submissionDate" type="date">
+
+                <button type="button" id="downloadBtn">
+                    Download Cover as PDF
+                </button>
+            </form>
+        </section>
+
+        <!-- Live assignment cover preview -->
+        <section class="preview-section">
+            <div class="preview-heading">
+                <h2>Live Preview</h2>
+                <span>A4 DOCUMENT</span>
+            </div>
+
+            <article id="cover" class="cover">
+
+                <div class="university">
+                    <img
+                        src="bracu-logo.png"
+                        alt="BRAC University Logo"
+                        class="university-logo"
+                    >
+                    <h2>BRAC UNIVERSITY</h2>
+                    <p id="previewDepartment">Department Name</p>
+                </div>
+
+                <div class="cover-title">
+                    <p class="eyebrow">ASSIGNMENT</p>
+                    <h1 id="previewTitle">Assignment Title</h1>
+
+                    <p>
+                        <strong>Course Code:</strong>
+                        <span id="previewCode">Course Code</span>
+                    </p>
+
+                    <p>
+                        <strong>Course Title:</strong>
+                        <span id="previewCourse">Course Title</span>
+                    </p>
+                </div>
+
+                <div class="details-grid">
+                    <div>
+                        <h3>SUBMITTED BY</h3>
+                        <p id="previewName">Student Name</p>
+                        <p>ID: <span id="previewId">Student ID</span></p>
+                        <p>Section: <span id="previewSection">—</span></p>
+                    </div>
+
+                    <div>
+                        <h3>SUBMITTED TO</h3>
+                        <p id="previewFaculty">Faculty Name</p>
+                        <p id="previewDesignation">Designation</p>
+                    </div>
+                </div>
+
+                <footer class="cover-footer">
+                    <p>Submission Date</p>
+                    <p id="previewDate">Date</p>
+                    <div>BRAC UNIVERSITY</div>
+                </footer>
+
+            </article>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
